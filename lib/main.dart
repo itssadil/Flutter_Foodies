@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:foodies/home/homePage.dart';
 import 'package:foodies/login/logInPage.dart';
 
 void main() {
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: title,
-      home: LogInPage(title: title),
+      // home: LogInPage(title: title),
+      home: SafeArea(child: HomePage(title: title)),
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
