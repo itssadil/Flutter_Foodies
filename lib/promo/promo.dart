@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:foodies/promo/promoCodes/promoCodes.dart';
+import 'package:foodies/promo/sub/promoCodes.dart';
+import 'package:foodies/promo/sub/promoTextField.dart';
 import 'package:foodies/widgets/headerText.dart';
 
 final List imgList = [
@@ -34,40 +35,19 @@ final List imgList = [
   },
 ];
 
-class Promo extends StatefulWidget {
-  const Promo({Key? key}) : super(key: key);
-
-  @override
-  _PromoState createState() => _PromoState();
-}
-
-class _PromoState extends State<Promo> {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            children: [
-              headerText(txt1: 'Promo', txt2: 'Code'),
-              Padding(
-                padding: const EdgeInsets.only(top: 20.0),
-                child: Form(
-                  child: TextField(
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(),
-                      labelText: 'Promo...',
-                      contentPadding: EdgeInsets.all(10),
-                    ),
-                  ),
-                ),
-              ),
-              for (var i in imgList) promoCodes(i, context),
-            ],
-          ),
-        )
-      ],
-    );
-  }
+Widget promo(BuildContext context) {
+  return ListView(
+    children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          children: [
+            headerText(txt1: 'Promo', txt2: 'Code'),
+            PromoTextField(),
+            for (var i in imgList) promoCodes(i, context),
+          ],
+        ),
+      )
+    ],
+  );
 }

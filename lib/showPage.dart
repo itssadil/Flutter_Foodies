@@ -17,16 +17,16 @@ class ShowPage extends StatefulWidget {
 }
 
 class _ShowPageState extends State<ShowPage> {
-  int current_index = 1;
-  final screens = [
-    Search(),
-    Promo(),
-    HomePage(),
-    notification(),
-    BookMark(),
-  ];
   @override
   Widget build(BuildContext context) {
+    int current_index = 1;
+    final screens = [
+      Search(),
+      promo(context),
+      HomePage(),
+      notification(),
+      BookMark(),
+    ];
     return Scaffold(
       extendBody: true,
       // appBar: myBar(title),
