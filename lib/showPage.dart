@@ -23,7 +23,7 @@ class _ShowPageState extends State<ShowPage> {
     promo(),
     HomePage(),
     notification(),
-    bookMark(),
+    BookMark(),
   ];
   @override
   Widget build(BuildContext context) {
