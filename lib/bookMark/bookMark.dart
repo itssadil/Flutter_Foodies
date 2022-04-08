@@ -19,7 +19,7 @@ class _BookMarkState extends State<BookMark> {
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             children: [
-              headerText(txt1: 'Explore', txt2: ''),
+              headerText(txt1: 'Bookmark', txt2: ''),
               Padding(
                 padding: const EdgeInsets.only(top: 20.0),
                 child: Form(

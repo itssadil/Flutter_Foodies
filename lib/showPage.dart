@@ -17,10 +17,10 @@ class ShowPage extends StatefulWidget {
 }
 
 class _ShowPageState extends State<ShowPage> {
-  int current_index = 0;
+  int current_index = 1;
   final screens = [
     Search(),
-    promo(),
+    Promo(),
     HomePage(),
     notification(),
     BookMark(),
