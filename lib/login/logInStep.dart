@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:foodies/home/homePage.dart';
+import 'package:foodies/ShowPage.dart';
 import 'package:foodies/widgets/routeAnimition.dart';
 
 class LogInStep extends StatefulWidget {
@@ -74,7 +74,7 @@ class _LogInStepState extends State<LogInStep> {
 
                 if (isLastStep) {
                   Navigator.pushReplacement(
-                      context, RouteAnimation(widget: HomePage(title: title)));
+                      context, RouteAnimation(widget: ShowPage(title: title)));
                 } else {
                   if (currentStep == 0) {
                     if (_formKey.currentState!.validate().toString() == 'true')

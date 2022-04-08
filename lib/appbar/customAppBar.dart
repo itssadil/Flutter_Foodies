@@ -42,9 +42,9 @@ class _CustomAppBarState extends State<CustomAppBar> {
           ),
           child: CircleAvatar(
             child: IconButton(
-              onPressed: () => Scaffold.of(context).openEndDrawer(),
+              onPressed: () {},
               icon: Icon(
-                Icons.notifications,
+                Icons.shopping_bag,
                 color: Theme.of(context).primaryColor,
               ),
             ),
