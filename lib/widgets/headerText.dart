@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-Widget headerText() {
+Widget headerText({String? txt1, txt2, txt3}) {
   return Container(
     margin: EdgeInsets.only(top: 20),
     alignment: Alignment.topLeft,
     child: RichText(
       text: TextSpan(
-        text: 'Stay at home \nMake your own ',
+        text: txt1,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 24,
@@ -15,10 +15,13 @@ Widget headerText() {
         ),
         children: [
           TextSpan(
-            text: 'Food',
+            text: ' $txt2 ',
             style: TextStyle(
               color: Colors.deepOrange,
             ),
+          ),
+          TextSpan(
+            text: txt3,
           ),
         ],
       ),

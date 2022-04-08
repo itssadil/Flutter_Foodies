@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foodies/home/homeWidget/popularTitle.dart';
+import 'package:foodies/home/homeWidget/homeSectionTitle.dart';
 import 'package:foodies/home/sub/newRecipes/sub/showNewRecipes.dart';
 
 Widget newRecipes() {

@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:foodies/appbar/drawer.dart';
+import 'package:foodies/widgets/customAppBar.dart';
+import 'package:foodies/widgets/drawer.dart';
 import 'package:foodies/bookMark/bookMark.dart';
 import 'package:foodies/home/homePage.dart';
 import 'package:foodies/search/search.dart';
-// import 'package:foodies/appbar/myBar.dart';
-import 'package:foodies/home/sub/homeHeader/homeHeader.dart';
-import 'package:foodies/home/sub/popularRecipes/popularRecipes.dart';
-import 'package:foodies/home/sub/primaryRecipes/primaryRecipes.dart';
-import 'package:foodies/home/sub/newRecipes/newRecipes.dart';
-import 'package:foodies/widgets/notifyDrawer.dart';
+import 'package:foodies/promo/promo.dart';
+import 'package:foodies/notification/notification.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class ShowPage extends StatefulWidget {
@@ -20,8 +17,14 @@ class ShowPage extends StatefulWidget {
 }
 
 class _ShowPageState extends State<ShowPage> {
-  int current_index = 1;
-  final screens = [search(), HomePage(), bookMark()];
+  int current_index = 0;
+  final screens = [
+    Search(),
+    promo(),
+    HomePage(),
+    notification(),
+    bookMark(),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,7 +47,9 @@ class _ShowPageState extends State<ShowPage> {
           index: current_index,
           items: <Widget>[
             Icon(Icons.search),
+            Icon(Icons.whatshot_outlined),
             Icon(Icons.home),
+            Icon(Icons.notifications),
             Icon(Icons.bookmark),
           ],
           height: 60,
@@ -55,7 +60,13 @@ class _ShowPageState extends State<ShowPage> {
           },
         ),
       ),
-      body: screens[current_index],
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+          child: CustomAppBar(),
+        ),
+        Expanded(child: screens[current_index]),
+      ]),
     );
   }
 }
